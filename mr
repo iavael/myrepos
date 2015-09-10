@@ -1111,7 +1111,7 @@ sub repodir {
 	my $subdir=$repo->{subdir};
 	my $ret=($subdir =~/^\//) ? $subdir : $topdir.$subdir;
 	$ret=~s/\/\.$//;
-	return $ret;
+	return abs_path($ret);
 }
 
 # Figure out which repos to act on.  Returns a list of array refs
